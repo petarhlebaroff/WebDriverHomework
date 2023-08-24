@@ -1,11 +1,13 @@
 package searchtests;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -19,8 +21,6 @@ public class SearchByTermWithChrome {
 
     @BeforeAll
     public static void classSetup () {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
 
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -33,9 +33,6 @@ public class SearchByTermWithChrome {
 
     @Test
     public void searchWithBing() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.bing.com/");
 
@@ -59,9 +56,6 @@ public class SearchByTermWithChrome {
 
     @Test
     public void searchWithGoogle() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.google.com/");
 

@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +36,6 @@ public class SearchByTermWithEdgeHeadless {
 
     @Test
     public void searchWithBing() {
-//
 
         driver.get("https://www.bing.com/");
 
@@ -61,9 +59,6 @@ public class SearchByTermWithEdgeHeadless {
 
     @Test
     public void searchWithGoogle() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.google.com/");
 
@@ -87,9 +82,7 @@ public class SearchByTermWithEdgeHeadless {
         String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
         String actualResult = firstResult.getText();
 
-
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
                 "The searched result is not found");
-
     }
 }

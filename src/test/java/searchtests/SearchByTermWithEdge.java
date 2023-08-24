@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,9 +20,6 @@ public class SearchByTermWithEdge {
 
     @BeforeAll
     public static void classSetup () {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
         driver = new EdgeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
@@ -35,9 +31,6 @@ public class SearchByTermWithEdge {
 
     @Test
     public void searchWithBing() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.bing.com/");
 
@@ -61,9 +54,6 @@ public class SearchByTermWithEdge {
 
     @Test
     public void searchWithGoogle() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.google.com/");
 
@@ -86,7 +76,6 @@ public class SearchByTermWithEdge {
         String expectedResult1 = "IT Career Start in 6 Months - Telerik Academy Alpha";
         String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
         String actualResult = firstResult.getText();
-
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
                 "The searched result is not found");

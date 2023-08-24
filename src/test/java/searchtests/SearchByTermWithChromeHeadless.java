@@ -36,9 +36,6 @@ public class SearchByTermWithChromeHeadless {
 
     @Test
     public void searchWithBing() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.bing.com/");
 
@@ -62,9 +59,6 @@ public class SearchByTermWithChromeHeadless {
 
     @Test
     public void searchWithGoogle() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
 
         driver.get("https://www.google.com/");
 
@@ -87,7 +81,6 @@ public class SearchByTermWithChromeHeadless {
         String expectedResult1 = "IT Career Start in 6 Months - Telerik Academy Alpha";
         String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
         String actualResult = firstResult.getText();
-
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
                 "The searched result is not found");
