@@ -74,8 +74,8 @@ public class SearchByTermWithEdgeHeadless {
         searchField.sendKeys(SEARCHED_TERM);
 
         WebElement searchButton = driver.findElement(By.xpath(GOOGLE_SEARCH_BTN));
-        WebElement sideClick = driver.findElement(By.xpath(GOOGLE_SIDE_CLICK_BTN));
-        sideClick.click();
+//        WebElement sideClick = driver.findElement(By.xpath(GOOGLE_SIDE_CLICK_BTN));
+//        sideClick.click();
         searchButton.click();
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));
