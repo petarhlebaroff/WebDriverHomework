@@ -75,6 +75,8 @@ public class SearchByTermWithEdge {
 
         WebElement firstResult = driver.findElement(By.xpath(GOOGLE_FIRST_RESULT));
 
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));
+
         String expectedResult1 = SEARCHED_RESULT_1;
         String expectedResult2 = SEARCHED_RESULT_2;
         String actualResult = firstResult.getText();
