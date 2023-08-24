@@ -65,7 +65,6 @@ public class SearchByTermWithChrome {
         WebElement searchField = driver.findElement(By.xpath("//textarea[@type='search']"));
         searchField.sendKeys("Telerik Academy Alpha");
 
-
         WebElement searchButton = driver.findElement(By.xpath("(//input[@type='submit' and @name='btnK'])[2]"));
         WebElement sideClick = driver.findElement(By.xpath("//img[@alt='Google' and @class='lnXdpd']"));
         sideClick.click();
@@ -78,7 +77,6 @@ public class SearchByTermWithChrome {
         String expectedResult1 = "IT Career Start in 6 Months - Telerik Academy Alpha";
         String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
         String actualResult = firstResult.getText();
-
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
                 "The searched result is not found");

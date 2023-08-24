@@ -65,7 +65,6 @@ public class SearchByTermWithFireFox {
         WebElement searchField = driver.findElement(By.xpath("//textarea[@type='search']"));
         searchField.sendKeys("Telerik Academy Alpha");
 
-
         WebElement searchButton = driver.findElement(By.xpath("(//input[@type='submit' and @name='btnK'])[2]"));
         WebElement sideClick = driver.findElement(By.xpath("//img[@alt='Google' and @class='lnXdpd']"));
         sideClick.click();
