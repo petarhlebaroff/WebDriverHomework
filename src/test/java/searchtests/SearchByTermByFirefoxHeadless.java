@@ -35,7 +35,7 @@ public class SearchByTermByFirefoxHeadless {
     }
 
     @Test
-    public void searchWithBing() {
+    public void resultFound_when_searchTermProvided_inBing() {
 
         driver.get("https://www.bing.com/");
 
@@ -58,7 +58,7 @@ public class SearchByTermByFirefoxHeadless {
     }
 
     @Test
-    public void searchWithGoogle() {
+    public void resultFound_when_searchTermProvided_inGoogle() {
 
 
         driver.get("https://www.google.com/");
