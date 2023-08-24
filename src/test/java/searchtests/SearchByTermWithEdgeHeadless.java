@@ -40,9 +40,10 @@ public class SearchByTermWithEdgeHeadless {
     }
 
     @Test
-    public void resultFound_when_searchTermProvided_inBing() {
+    public void resultFound_when_searchTermProvided_inBing()  {
 
         driver.get(BING_URL);
+
 
         WebElement searchBar = driver.findElement(By.xpath(BING_SEARCH_BAR));
         searchBar.sendKeys(SEARCHED_TERM);
@@ -63,7 +64,7 @@ public class SearchByTermWithEdgeHeadless {
     }
 
     @Test
-    public void resultFound_when_searchTermProvided_inGoogle() {
+    public void resultFound_when_searchTermProvided_inGoogle() throws InterruptedException {
 
 
         driver.get(GOOGLE_URL);
@@ -74,6 +75,7 @@ public class SearchByTermWithEdgeHeadless {
         WebElement searchField = driver.findElement(By.xpath(GOOGLE_SEARCH_FIELD));
         searchField.sendKeys(SEARCHED_TERM);
 
+        Thread.sleep(500);
         searchField.sendKeys(Keys.ENTER);
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));

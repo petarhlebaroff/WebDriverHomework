@@ -63,7 +63,7 @@ public class SearchByTermByFirefoxHeadless {
     }
 
     @Test
-    public void resultFound_when_searchTermProvided_inGoogle() {
+    public void resultFound_when_searchTermProvided_inGoogle() throws InterruptedException {
 
 
         driver.get(GOOGLE_URL);
@@ -74,6 +74,7 @@ public class SearchByTermByFirefoxHeadless {
         WebElement searchField = driver.findElement(By.xpath(GOOGLE_SEARCH_FIELD));
         searchField.sendKeys(SEARCHED_TERM);
 
+        Thread.sleep(500);
         searchField.sendKeys(Keys.ENTER);
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));
