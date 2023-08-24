@@ -1,22 +1,21 @@
 package searchtests;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-import java.util.List;
 
-public class SearchByTerm {
+public class SearchByTermWithEdgeHeadless {
 
     private static WebDriver driver;
 
@@ -24,10 +23,10 @@ public class SearchByTerm {
 
     @BeforeAll
     public static void classSetup () {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("--headless");
 
-        driver = new FirefoxDriver();
+        driver = new EdgeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
@@ -38,9 +37,7 @@ public class SearchByTerm {
 
     @Test
     public void searchWithBing() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-
+//
 
         driver.get("https://www.bing.com/");
 
