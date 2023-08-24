@@ -2,6 +2,7 @@ package helpers;
 
 public class Constants {
 
+    public static String HEADLESS = "--headless";
     public static String GOOGLE_URL = "https://www.google.com/";
     public static String BING_URL = "https://www.bing.com/";
 
@@ -11,5 +12,7 @@ public class Constants {
     public static String RESULT_2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
 
     public static String FAIL_MESSAGE = "The searched result is not found";
+
+
 
 }

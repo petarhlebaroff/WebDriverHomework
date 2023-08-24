@@ -27,7 +27,7 @@ public class SearchByTermWithChromeHeadless {
     @BeforeAll
     public static void classSetup () {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+        options.addArguments(HEADLESS);
 
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

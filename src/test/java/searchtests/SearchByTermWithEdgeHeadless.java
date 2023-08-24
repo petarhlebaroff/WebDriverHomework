@@ -27,7 +27,7 @@ public class SearchByTermWithEdgeHeadless {
     @BeforeAll
     public static void classSetup () {
         EdgeOptions options = new EdgeOptions();
-        options.addArguments("--headless");
+        options.addArguments(HEADLESS);
 
         driver = new EdgeDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));

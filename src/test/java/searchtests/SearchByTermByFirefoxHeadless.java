@@ -26,7 +26,7 @@ public class SearchByTermByFirefoxHeadless {
     @BeforeAll
     public static void classSetup () {
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");
+        options.addArguments(HEADLESS);
 
         driver = new FirefoxDriver(options);
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
