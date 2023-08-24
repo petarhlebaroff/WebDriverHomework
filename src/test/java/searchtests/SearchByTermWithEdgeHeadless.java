@@ -17,6 +17,7 @@ import java.time.Duration;
 
 import static helpers.Constants.*;
 import static helpers.XPaths.*;
+import static helpers.XPaths.BING_SEARCH_BAR;
 import static helpers.XPaths.GOOGLE_FIRST_RESULT;
 
 public class SearchByTermWithEdgeHeadless {
@@ -44,7 +45,7 @@ public class SearchByTermWithEdgeHeadless {
 
         driver.get(BING_URL);
 
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BING_SEARCH_BAR)));
         WebElement searchBar = driver.findElement(By.xpath(BING_SEARCH_BAR));
         searchBar.sendKeys(SEARCHED_TERM);
 
