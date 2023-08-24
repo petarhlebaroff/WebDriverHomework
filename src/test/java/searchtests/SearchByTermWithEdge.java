@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -68,10 +69,7 @@ public class SearchByTermWithEdge {
         WebElement searchField = driver.findElement(By.xpath(GOOGLE_SEARCH_FIELD));
         searchField.sendKeys(SEARCHED_TERM);
 
-        WebElement searchButton = driver.findElement(By.xpath(GOOGLE_SEARCH_BTN));
-//        WebElement sideClick = driver.findElement(By.xpath(GOOGLE_SIDE_CLICK_BTN));
-//        sideClick.click();
-        searchButton.click();
+        searchField.sendKeys(Keys.ENTER);
 
         wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));
 
@@ -85,5 +83,4 @@ public class SearchByTermWithEdge {
                 FAIL_MESSAGE);
 
     }
-
 }
