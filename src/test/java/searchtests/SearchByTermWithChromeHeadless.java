@@ -14,6 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static helpers.Constants.*;
+import static helpers.XPaths.*;
+import static helpers.XPaths.GOOGLE_FIRST_RESULT;
+
 public class SearchByTermWithChromeHeadless {
 
     private static WebDriver driver;
@@ -37,52 +41,53 @@ public class SearchByTermWithChromeHeadless {
     @Test
     public void resultFound_when_searchTermProvided_inBing() {
 
-        driver.get("https://www.bing.com/");
+        driver.get(BING_URL);
 
-        WebElement searchBar = driver.findElement(By.xpath("//input[@name='q' and @type='search']"));
-        searchBar.sendKeys("Telerik Academy Alpha");
+        WebElement searchBar = driver.findElement(By.xpath(BING_SEARCH_BAR));
+        searchBar.sendKeys(SEARCHED_TERM);
 
-        WebElement searchButton = driver.findElement(By.xpath("//label[@id='search_icon']"));
+        WebElement searchButton = driver.findElement(By.xpath(BING_SEARCH_BTN));
         searchButton.click();
 
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//h2)[1]")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(BING_FIRST_RESULT)));
 
-        WebElement firstResult = driver.findElement(By.xpath("(//h2/a)[1]"));
+        WebElement firstResult = driver.findElement(By.xpath(BING_FIRST_RESULT));
 
-        String expectedResult1 = "IT Career Start in 6 Months - Telerik Academy Alpha";
-        String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
+        String expectedResult1 = RESULT_1;
+        String expectedResult2 = RESULT_2;
         String actualResult = firstResult.getText();
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
-                "The searched result is not found");
+                FAIL_MESSAGE);
     }
 
     @Test
     public void resultFound_when_searchTermProvided_inGoogle() {
 
-        driver.get("https://www.google.com/");
 
-        WebElement agreeButton = driver.findElement(By.xpath("//button[@id='L2AGLb']"));
+        driver.get(GOOGLE_URL);
+
+        WebElement agreeButton = driver.findElement(By.xpath(GOOGLE_AGREE_BTN));
         agreeButton.click();
 
-        WebElement searchField = driver.findElement(By.xpath("//textarea[@type='search']"));
-        searchField.sendKeys("Telerik Academy Alpha");
+        WebElement searchField = driver.findElement(By.xpath(GOOGLE_SEARCH_FIELD));
+        searchField.sendKeys(SEARCHED_TERM);
 
-        WebElement searchButton = driver.findElement(By.xpath("(//input[@type='submit' and @name='btnK'])[2]"));
-        WebElement sideClick = driver.findElement(By.xpath("//img[@alt='Google' and @class='lnXdpd']"));
+        WebElement searchButton = driver.findElement(By.xpath(GOOGLE_SEARCH_BTN));
+        WebElement sideClick = driver.findElement(By.xpath(GOOGLE_SIDE_CLICK_BTN));
         sideClick.click();
         searchButton.click();
 
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("(//a/h3)[1]")));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath(GOOGLE_FIRST_RESULT)));
 
-        WebElement firstResult = driver.findElement(By.xpath("(//a/h3)[1]"));
+        WebElement firstResult = driver.findElement(By.xpath(GOOGLE_FIRST_RESULT));
 
-        String expectedResult1 = "IT Career Start in 6 Months - Telerik Academy Alpha";
-        String expectedResult2 = "Telerik Academy Alpha - IT Career Start in 6 Months";
+        String expectedResult1 = RESULT_1;
+        String expectedResult2 = RESULT_2;
         String actualResult = firstResult.getText();
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
-                "The searched result is not found");
+                FAIL_MESSAGE);
 
     }
 }
