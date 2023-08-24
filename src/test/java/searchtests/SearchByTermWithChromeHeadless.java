@@ -53,8 +53,8 @@ public class SearchByTermWithChromeHeadless {
 
         WebElement firstResult = driver.findElement(By.xpath(BING_FIRST_RESULT));
 
-        String expectedResult1 = RESULT_1;
-        String expectedResult2 = RESULT_2;
+        String expectedResult1 = SEARCHED_RESULT_1;
+        String expectedResult2 = SEARCHED_RESULT_2;
         String actualResult = firstResult.getText();
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
@@ -82,8 +82,8 @@ public class SearchByTermWithChromeHeadless {
 
         WebElement firstResult = driver.findElement(By.xpath(GOOGLE_FIRST_RESULT));
 
-        String expectedResult1 = RESULT_1;
-        String expectedResult2 = RESULT_2;
+        String expectedResult1 = SEARCHED_RESULT_1;
+        String expectedResult2 = SEARCHED_RESULT_2;
         String actualResult = firstResult.getText();
 
         Assertions.assertTrue((actualResult.equals(expectedResult1)) || (actualResult.equals(expectedResult2)),
