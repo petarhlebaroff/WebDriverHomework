@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,7 +28,7 @@ public class SearchByTermWithFireFox {
     @BeforeAll
     public static void classSetup () {
 
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
